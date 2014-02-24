@@ -21,7 +21,7 @@ window.addHello = function() {
   var who = prompt('Hello to whom?');
   var hello = document.createElement('x-hello');
   hello.setAttribute('name', who);
-  document.querySelector('body').insertBefore(hello, this);
+  document.querySelector('body').appendChild(hello, this);
 }
 </script>
 

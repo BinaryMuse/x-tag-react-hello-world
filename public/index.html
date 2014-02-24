@@ -9,7 +9,11 @@
 /** @jsx React.DOM */
 var Hello = React.createClass({
   render: function() {
-    return <div>Hello {this.props.name}!</div>;
+    return <div onClick={this.onClick}>Hello {this.props.name}!</div>;
+  },
+
+  onClick: function() {
+    alert('Howdy, ' + this.props.name);
   }
 });
 

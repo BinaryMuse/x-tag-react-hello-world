@@ -1,0 +1,29 @@
+<!doctype html>
+
+<script src='/js/vendor/react-0.9.0.js'></script>
+<script src='/js/vendor/JSXTransformer-0.9.0.js'></script>
+<script src='/js/vendor/x-tag-core.js'></script>
+<script src='/js/vendor/x-react.js'></script>
+
+<script type='text/jsx'>
+/** @jsx React.DOM */
+var Hello = React.createClass({
+  render: function() {
+    return <div>Hello {this.props.name}!</div>;
+  }
+});
+
+xreact.register('x-hello', Hello);
+
+window.addHello = function() {
+  var who = prompt('Hello to whom?');
+  var hello = document.createElement('x-hello');
+  hello.setAttribute('name', who);
+  document.querySelector('body').insertBefore(hello, this);
+}
+</script>
+
+<body>
+
+<button onclick='addHello()'>Add</button>
+<x-hello name="World!"></x-hello>

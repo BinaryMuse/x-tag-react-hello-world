@@ -1,7 +1,7 @@
 <!doctype html>
 
-<script src='js/vendor/react-0.9.0.js'></script>
-<script src='js/vendor/JSXTransformer-0.9.0.js'></script>
+<script src='js/vendor/react-custom.js'></script>
+<script src='js/vendor/JSXTransformer-custom.js'></script>
 <script src='js/vendor/x-tag-core.js'></script>
 <script src='js/vendor/x-react.js'></script>
 
@@ -13,8 +13,10 @@ var Hello = React.createClass({
   }
 });
 
+// Any `x-hello` tag will use our `Hello` React widget.
 xreact.register('x-hello', Hello);
 
+// Simply adding a node to the DOM is enough to trigger the React render.
 window.addHello = function() {
   var who = prompt('Hello to whom?');
   var hello = document.createElement('x-hello');

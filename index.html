@@ -12,7 +12,8 @@ var Hello = React.createClass({
     return <div>Hello {this.props.name}! <a href='' onClick={this.onClick}>(click me!)</a></div>;
   },
 
-  onClick: function() {
+  onClick: function(e) {
+    e.preventDefault();
     alert('Howdy, ' + this.props.name);
   }
 });
